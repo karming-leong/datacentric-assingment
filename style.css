@@ -1,0 +1,40 @@
+body {
+    background-color: #f7fff7;
+    font-family: Arial, sans-serif;
+}
+
+h1, h3 {
+    color: #1a535c;
+}
+
+.btn-primary {
+    background-color: #4ecdc4;
+    border-color: #4ecdc4;
+}
+
+.btn-danger {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #ffe66d;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #f7fff7;
+}
+
+input, select {
+    border: 2px solid #1a535c;
+    border-radius: 5px;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+}
+
+/* Row background color highlight */
+.highlight {
+    background-color: #0a02e1; /* Adjust to your preferred color */
+}

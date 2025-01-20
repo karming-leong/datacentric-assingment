@@ -1,0 +1,6 @@
+mkdir recipe-api
+cd recipe-api
+npm init -y
+npm install express mongoose bcryptjs jsonwebtoken dotenv cors 
+mkdir models routes middleware config
+touch server.js .env 

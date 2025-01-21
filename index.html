@@ -9,6 +9,11 @@
 </head>
 <body>
     <div class="container mt-4">
+        <!-- Add logout button -->
+        <div class="text-right mb-3" id="auth-section">
+            <button id="logout-btn" class="btn btn-danger" onclick="logout()" style="display: none;">Logout</button>
+        </div>
+
         <h1 class="text-center">School Item List (Primary 1-6)</h1>
         
         <!-- Dropdown for Primary Level Selection -->
@@ -31,6 +36,33 @@
                 <button id="add-random-book-btn" class="btn btn-success" style="display: none;">Add to List</button>
             </div>
         </div>
+        <!-- Update the search section -->
+        <div class="search-section mb-4">
+            <div class="row">
+                <div class="col-md-4 mb-2 mb-md-0">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search by name, type, or comment...">
+                </div>
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <select id="filterType" class="form-control">
+                        <option value="">All Types</option>
+                        <option value="Book">Books</option>
+                        <option value="Stationery">Stationery</option>
+                    </select>
+                </div>
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <select id="sortBy" class="form-control">
+                        <option value="name">Sort by Name</option>
+                        <option value="type">Sort by Type</option>
+                        <option value="createdAt">Sort by Date Added</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <button id="searchButton" class="btn btn-primary w-100">Search</button>
+                </div>
+            </div>
+        </div>
+
+
         
         <!-- List of Items -->
         <div id="list-section">
@@ -52,6 +84,17 @@
         </div>
     </div>
 
+    <script>
+        function logout() {
+            localStorage.removeItem('authToken');
+            location.reload();
+        }
+
+        // Show/hide logout button based on auth status
+        if (localStorage.getItem('authToken')) {
+            document.getElementById('logout-btn').style.display = 'block';
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
